@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
+import Loading from "@/components/Loading";
 
 export default function ItemsPage() {
   const [items, setItems] = useState([]);
@@ -48,7 +49,7 @@ export default function ItemsPage() {
       </div>
 
       {items.length === 0 ? (
-        <p className="text-gray-500">No items yet.</p>
+        <Loading />
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map((item, index) => (
